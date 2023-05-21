@@ -35,7 +35,6 @@ function App() {
   )
 
   useEffect(()=>{
-    
     if(choiceOne&&choiceTwo){
       setDisabled(true)
       if(choiceOne.src===choiceTwo.src){
@@ -59,17 +58,17 @@ function App() {
 
   }, [choiceOne, choiceTwo])
 
-    const resetTurn = (card) => {
+  const resetTurn = (card) => {
       setChoiceOne(null)
       setChoiceTwo(null)
       setTurns(prevTurns => prevTurns+1)
       setDisabled(false)
-    }
+  }
 
-    //start new game automatically
-    useEffect(()=>{
-      shuffleCards()
-    }, [])
+  //start new game automatically
+  useEffect(()=>{
+    shuffleCards()
+  }, [])
 
   return (
     <div className="App">
